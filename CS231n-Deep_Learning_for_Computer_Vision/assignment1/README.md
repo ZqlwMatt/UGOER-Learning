@@ -145,9 +145,9 @@ for k in k_choices:
 
 SVM is a typical linear classifer, for any possible catalogue, **we use SVM to calculate the cost function and train the linear weight**. The esscence is to use a great linear weight to do classification.
 
-<img src="/Users/zqlwmatt/Library/Application Support/typora-user-images/image-20220912151832643.png" alt="image-20220912151832643" style="zoom:8%;" />
+<img src="./assets/image-20220912151832643.png" alt="image-20220912151832643" style="zoom:8%;" />
 
-$L = \cfrac{1}{N} \sum_{i=1}^{N} L_{i}$
+$L = \cfrac{1}{N} \sum \limits_{i=1}^{N} L_{i}$
 
 - **Regularization:** $L^{\prime}(W) = L(W) + \lambda R(W)$, where $\lambda$ is a hyperparameter. It means that we could use more complex polynomial at expense of higher $R(W)$.
 
@@ -291,7 +291,7 @@ for learning_rate in learning_rates:
 
 A different perception: wanna interpret raw classifier scores as probabilities. (Also use linear weight)
 
-<img src="./assets/IMG_CDF5A3A8BC4C-1.jpeg" alt="IMG_CDF5A3A8BC4C-1" style="zoom:8%;" />
+<img src="./assets/IMG_CDF5A3A8BC4C-1.jpeg" alt="IMG_CDF5A3A8BC4C-1" style="zoom:5%;" />
 
 Then we use maximum likelihood estimation to evaluate the cost. $L_i = -\log \cfrac{e^{s_{y_{i}}}}{\sum_{j}e^{s_{j}}}$.
 
@@ -426,14 +426,18 @@ for learning_rate in learning_rates:
 ## Q4: Two-Layer Neural Network
 
 **Backpropagation:** (with matrix type of data $x, w$)
+
 <img src="./assets/Lecture 4_ Neural Networks and Backpropagation-134.jpg" alt="Lecture 4_ Neural Networks and Backpropagation-134" style="zoom:20%;" />
 
 Drawbacks: to calculate the Jacobian Matrices, we need to flatten the matrix $x, w$ as rows/columns, but the Jacobian Matrices is huge and sparse.
 
 Optimization: $\cfrac{\partial L}{\partial x} = (\cfrac{\partial L}{\partial y}) w^{T}, \cfrac{\partial L}{\partial w} = x^{T} (\cfrac{\partial L}{\partial y})$
+
 <img src="./assets/30048A31544B6656FC64EE0AD1C74D21.png" alt="30048A31544B6656FC64EE0AD1C74D21" style="zoom:20%;" />
 
 **Objective: Consctruct a two-layer fully-connected neural network with ReLU nonlinearity and softmax loss that uses a modular layer design. We assume an input dimension of D, a hidden dimension of H, and perform classification over C classes. The architecure should be affine - relu - affine - softmax.**
+
+<img src="./assets/Lecture 5_ Image Classification with CNNs-9.jpg" alt="Lecture 5_ Image Classification with CNNs-9" style="zoom:20%;" />
 
 First, we should complete basic modulars.
 
